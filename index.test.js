@@ -10,6 +10,6 @@ test("that it returns that json!!", async () => {
   });
   const result = await main();
   expect(result).toEqual({ hello: "world" });
-
+  expect(global.fetch.mock.calls).toHaveLength(1);
   global.fetch.mockRestore();
 });
